@@ -46,7 +46,7 @@
 
             <!--<input th:href="@{/oprateSystem}" th:text="${user.userid}" type="text" hidden="hidden" />-->
             <a class="navbar-brand page-scroll"  th:href="@{/oprateSystem/goto(userid=${userid})}" >后台</a>
-            <span  hidden="hidden"><td data-th-text="${user.userid}" name="userid"></td></span>
+            <span  hidden="hidden"><td data-th-text="${user.userid}" name="userid" id="getUserid"></td></span>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->

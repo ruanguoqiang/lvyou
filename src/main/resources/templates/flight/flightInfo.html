@@ -24,7 +24,6 @@
                 <th>目的地</th>
                 <th>余票</th>
                 <th>操作</th>
-                <th style="width: 26px;"></th>
             </tr>
             </thead>
             <tbody>
@@ -37,7 +36,7 @@
                 <td data-th-text="${flight.flytocity}">...</td>
                 <td data-th-text="${flight.flightnumavail+'张'}">...</td>
                 <td>
-                    <button  th:id="${flight.flightnum}"  onclick="update(this)" class="btn btn-info"><i class="icon-edit icon-white"></i> 预定</button>
+                    <button  th:id="${flight.flightnum}" th:name="${user.userid}" onclick="order(this)" class="btn btn-info"><i class="icon-edit icon-white"></i> 预定</button>
                 </td>
             </tr>
           <!--  <tr data-th-each="user : ${userList}">
@@ -59,6 +58,51 @@
     $(document).ready(function() {
         $('#example').DataTable();
     } );
+
+    function order(obj)
+    {
+        var updateid=$(obj).attr("id");
+        var userid=$(obj).attr("name");
+        if(!updateid)
+        {
+            alert('Error！');
+            return false;
+        }
+        // 异步提交数据到页面
+        $.ajax(
+            {
+                url: "/orderflight",
+                data:{"flightnum":updateid,"userid":userid},
+                type: "post",
+                beforeSend:function()
+                {
+                    return true;
+                },
+                success:function(data)
+                {
+                    if(data > 0)
+                    {
+                        var msg = "预定";
+                        alert(msg + "OK！");
+                        location.reload();
+                    }
+                    else
+                    {
+                        alert('操作失败');
+                    }
+                },
+                error:function()
+                {
+                    alert('请求出错');
+                },
+                complete:function()
+                {
+                    //$('#acting_tips').hide();
+                }
+            });
+
+        return false;
+    }
 </script>
 
 </body>

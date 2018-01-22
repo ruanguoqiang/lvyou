@@ -237,7 +237,7 @@
         //alert($("#username").val())
         //alert($("#add-or-update").val())
         if ($("#add-or-update").val()=="update"){
-            var posturl="updateUser2";
+            var posturl="flight/update";
         }
         else if ($("#add-or-update").val()=="insert"){
             var  posturl="flight/insert";
@@ -292,7 +292,7 @@
         }
         $.ajax(
             {
-                url: "updateUser",
+                url: "flight/beforUpdate",
                 data:{"flightnum":updateid},
                 type: "post",
                 beforeSend:function()
@@ -352,7 +352,7 @@
         }
         $.ajax(
             {
-                url: "Delete",
+                url: "flight/delete",
                 data:{"flightnum":deleteid},
                 type: "post",
                 success:function(data)
@@ -379,6 +379,8 @@
 
         return false;
     }
+
+
 </script>
 </body>
 </html>

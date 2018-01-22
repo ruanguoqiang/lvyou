@@ -1,5 +1,7 @@
 package com.liang.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -12,6 +14,7 @@ public class Flight implements Serializable {
 
     private Integer flightnumavail;
 
+   @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date flydate;
 
     private String flyfromcity;
