@@ -1,5 +1,6 @@
 package com.liang.web;
 
+import com.liang.dao.FlightMapper;
 import com.liang.dao.JourneyUserMapper;
 import com.liang.model.JourneyUser;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,11 +16,13 @@ public class OperateController {
 
     @Autowired
     private JourneyUserMapper journeyUserMapper;
+    @Autowired
+    private FlightMapper flightMapper;
 
     @RequestMapping("/goto")
     public String index(@RequestParam Integer userid, Model model) {
         model.addAttribute("localUser",journeyUserMapper.selectByPrimaryKey(userid));
-        model.addAttribute("userList",journeyUserMapper.selectAll());
+        model.addAttribute("flightList",flightMapper.selectAll());
         return "oprate/main";
     }
 

@@ -2,8 +2,8 @@
 <!DOCTYPE generatorConfiguration
         PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
-<generatorConfiguration>
-    <classPathEntry location="C:\Users\Administrator\.m2\repository\mysql\mysql-connector-java\5.1.35\mysql-connector-java-5.1.35.jar" />
+<generatorConfiguration>       <!--C:\Users\Administrator.MICROSOFT\.m2\repository\mysql\mysql-connector-java\5.1.35-->
+    <classPathEntry location="C:\Users\Administrator.MICROSOFT\.m2\repository\mysql\mysql-connector-java\5.1.21\mysql-connector-java-5.1.35.jar" />
     <context id="test" targetRuntime="MyBatis3">
         <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin"></plugin>
         <plugin type="org.mybatis.generator.plugins.SerializablePlugin"></plugin>

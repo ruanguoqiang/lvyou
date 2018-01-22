@@ -2,6 +2,8 @@ package com.liang.dao;
 
 import com.liang.model.Hotel;
 
+import java.util.List;
+
 public interface HotelMapper {
     int deleteByPrimaryKey(String hotelnum);
 
@@ -14,4 +16,6 @@ public interface HotelMapper {
     int updateByPrimaryKeySelective(Hotel record);
 
     int updateByPrimaryKey(Hotel record);
+
+    List<Hotel> selectAll();
 }

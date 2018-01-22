@@ -17,14 +17,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-/**
- * Web层日志切面
- *
- * @author 程序猿DD
- * @version 1.0.0
- * @date 16/5/17 上午10:42.
- * @blog http://blog.didispace.com
- */
+
+ // Web层日志切面
+
 @Aspect
 @Order(1)
 @Component
@@ -50,12 +45,9 @@ public class WebLogAspect {
 
     }
 
-    /**
-     * 获取头信息
-     *
-     * @param request
-     * @return
-     */
+
+
+
     private Map<String, String> getHeadersInfo(HttpServletRequest request) {
         Map<String, String> map = new HashMap();
         Enumeration headerNames = request.getHeaderNames();
